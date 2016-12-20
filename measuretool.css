@@ -1,0 +1,84 @@
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 24px 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    color: red;
+}
+.ol-popup-closer:after {
+    content: "✖";
+}
+/*MeasureTool*/
+
+.MeasureTool{
+  position: absolute;
+  top: 2.0em;
+  right: 5em;
+  text-align: left;
+  padding: 0;
+}
+.MeasureTool .ulbody{
+  display: none;
+}
+.MeasureTool.shown .ulbody{
+  display: block;
+}
+.ulbody li input:focus, .ulbody li input:hover {
+  background-color: white;
+  color: blue;
+  font-weight: bold;
+}
+.MeasureTool ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.MeasureTool ul li{
+  text-align: center;
+}
+.MeasureTool>ul>li>input{
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABiUlEQVRIS8WUQU7CQBSG/ze6lxsoJxCPYMpePIG4almJW2giJq1xJ6ykbuAG6p6GIwgnkBsYtwb7zGsZLKUk0tI4m6btzP/N/+bNTyh4UMH6+D+A7fkdACwOHdO4TTq1vVENoGP9PW2O/NvowPb8UDwafO6Y1Zc4xO77ExDigFStvwEYPccymhrQGYxL86/gIw50TCM7gBkz1zLKWrD16NeVwgCMqXaRGcDgTwIdzANVvm+czgTS9kZDAl0AkLO5WZxTNgfM/EpEZwxcu6bRjQD+jIDDgNSJ4uAtFyAIcCnlEJBrVWutp3FFRMWZa1ZLuhkyl0hKs6+Cd73Ltuc3CXjQwNwA2ZkuibQrM+pSMnF21zCGOwHYfb8LwhUYPSauxw99N4Do1j7/3jtMHcuoyHsegESFxET4lN7Hnpoo/j6Kvkc3exEpy3nJSCk+7OKhtinYton0pB6thlooFZYkx1hZnwbIob2+NA2wlv1bEsNs0kMAK5Z012wpupye1Cu+i7Lu9K/rCnfwA90A1i8VnCB2AAAAAElFTkSuQmCC') /*logo.png*/;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.MeasureTool input[type="button"]{
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 60px;
+  height: 26px;
+  border: 0;
+}
+.MeasureTool .ulbody li{
+  border-top: 1px solid rgba(221, 221, 221, 0.4);
+}

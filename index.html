@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="giser_yugang@163.com" />
+    <title>ol3-MeasureTool使用示例(example)</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v3.19.1/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v3.19.1/build/ol.js"></script>
+    <link rel="stylesheet" href="measureTool.css" type="text/css">
+    <script type="text/javascript" src="measureTool.js"></script>
+
+    <style>
+      #map{
+        height: 80%;
+        width: 90%;
+      }
+
+      </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+
+    <script type="text/javascript">
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          center: [11575000, 3602500],
+          zoom: 14
+        })
+      });
+
+      var MeasureTool = new ol.control.MeasureTool({
+        // sphereradius : 6378137,//sphereradius
+      });
+      map.addControl(MeasureTool);
+    </script>
+
+  </body>
+</html>
