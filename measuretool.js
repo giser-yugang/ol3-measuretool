@@ -141,7 +141,11 @@ ol.control.MeasureTool.prototype.mapmeasure = function(typeSelect) {
         length += wgs84Sphere.haversineDistance(c1, c2);
       }
     } else {
-      length = Math.round(line.getLength() * 100) / 100;
+      var sourceProj = map.getView().getProjection();
+      var geom = /** @type {ol.geom.Polygon} */(line.clone().transform(
+          sourceProj, 'EPSG:3857'));
+      length = Math.round(geom.getLength() * 100) / 100;
+      // length = Math.round(line.getLength() * 100) / 100;
     }
     var output;
     if (length > 100) {
@@ -162,7 +166,11 @@ ol.control.MeasureTool.prototype.mapmeasure = function(typeSelect) {
       var coordinates = geom.getLinearRing(0).getCoordinates();
       area = Math.abs(wgs84Sphere.geodesicArea(coordinates));
     } else {
-      area = polygon.getArea();
+      var sourceProj = map.getView().getProjection();
+      var geom = /** @type {ol.geom.Polygon} */(polygon.clone().transform(
+          sourceProj, 'EPSG:3857'));
+      area = geom.getArea();
+      // area = polygon.getArea();
     }
     var output;
     if (area > 10000) {

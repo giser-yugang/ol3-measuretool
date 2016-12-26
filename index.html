@@ -29,13 +29,14 @@
         ],
         target: 'map',
         view: new ol.View({
-          center: [11575000, 3602500],
+          projection:"EPSG:4326",
+          center:[103.980167,30.770697],
           zoom: 14
         })
       });
 
       var MeasureTool = new ol.control.MeasureTool({
-        // sphereradius : 6378137,//sphereradius
+        sphereradius : 6378137,//sphereradius
       });
       map.addControl(MeasureTool);
     </script>
